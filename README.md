@@ -1,6 +1,11 @@
 # README
-# 20:21
-
+# 明日やらないといけない
+ 1.共通部分を完成
+ 2.bootstrap
+ 3.メッセージ
+ 4.レコードの並び順
+ 5.検証
+ 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

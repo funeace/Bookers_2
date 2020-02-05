@@ -1,5 +1,11 @@
 class User < ApplicationRecord
-  has_many :book,dependent: :destroy
+
+  #refileを使うときの設定。このモデルのattachmentがきたら、profile_image_id を見に行くってこと。多分
+  attachment :profile_image
+
+  #bookモデルと1:多の関係を作る（has_manyが1のほうで、 belongs_toが多のほう）
+  has_many :books, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
