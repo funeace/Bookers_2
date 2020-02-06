@@ -1,5 +1,11 @@
 class User < ApplicationRecord
 
+  # ユーザ名が2文字〜20文字の制限(length)、空白じゃない(presence: true)
+  validates :name, length: { in: 2..20 }, presence: true
+
+  # 自己紹介文が最大50文字
+  validates :introduction, length: {maximum: 50}
+
   #refileを使うときの設定。このモデルのattachmentがきたら、profile_image_id を見に行くってこと。多分
   attachment :profile_image
 

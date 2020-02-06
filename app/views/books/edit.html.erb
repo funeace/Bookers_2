@@ -1,15 +1,28 @@
 <h1>Editing Book</h1>
 
 <%= form_for(@book) do |f| %>
-<div class="field">
-  <%= f.label :title %><br>
-  <%= f.text_field :title %> 
-</div>
+  <!-- エラーメッセージ -->
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %> error prohibited this obj from being saved
+    <%= @book.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
 
-<div>
-  <%= f.label :body,"Opinion" %><br>
-  <%= f.text_area :body %>
-</div>
+  <div class="row">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %> 
+  </div>
 
-  <%= f.submit "Update Book" %>
+  <div class="row">
+    <%= f.label :body,"Opinion" %><br>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="row">
+      <%= f.submit "Update Book" %>
+  </div>
 <% end %>
+
+<%= link_to "Show",book_path(@book) %> | 
+<%= link_to "Back",books_path %>

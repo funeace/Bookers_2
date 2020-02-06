@@ -1,7 +1,9 @@
+<!-- 投稿部分 -->
+<%= render 'layouts/sidebar',user: @user,book: @book %>
 <h1>Users</h1>
 
-<table>
-
+<div class="col-lg-9">
+  <table class="table">
   <thead>
     <tr>
       <th>Image</th>
@@ -13,7 +15,7 @@
     <% @users.each do |user| %>
       <tr>
         <td>
-          <%= attachment_image_tag user, :profile_image, :fill, 60,60 , format: 'jpeg',class:"img-circle",fallback:"no_image.jpg" %>
+          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg',class: "pull-left profile-img",fallback: "no_image.jpg", size: "60x60" %>
         </td>
 
         <td>
@@ -26,5 +28,5 @@
       </tr>
     <% end %>
   </tbody>
-
-</table>
+  </table>
+</div>
